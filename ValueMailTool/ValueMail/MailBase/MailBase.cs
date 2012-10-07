@@ -119,6 +119,11 @@ namespace ValueMail.MailBase
             throw new NotImplementedException();
         }
 
+        public virtual List<MailHeadModel> GetMailHeaders(String expression)
+        {
+            throw new NotImplementedException();
+        }
+
         public virtual MailModel GetMail(Int32 index)
         {
             throw new NotImplementedException();

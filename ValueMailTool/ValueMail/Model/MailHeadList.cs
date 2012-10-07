@@ -20,10 +20,10 @@ namespace ValueMail.Model
             }
         }
 
-        public MailHeadList(MailBase.MailBase mailBase, SearchType searchType)
+        public MailHeadList(MailBase.MailBase mailBase, String expression)
             : base(new List<MailHeadModel>())
         {
-            List<MailHeadModel> headerList = mailBase.GetMailHeaders(searchType);
+            List<MailHeadModel> headerList = mailBase.GetMailHeaders(expression);
             foreach (MailHeadModel header in headerList)
             {
                 base.Items.Add(header);

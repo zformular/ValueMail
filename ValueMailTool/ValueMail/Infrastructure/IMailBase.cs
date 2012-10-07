@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using ValueMail.Model;
+using ValueMail.IMAP.Infrastructure;
 
 namespace ValueMail.Infrastructure
 {
@@ -32,6 +33,8 @@ namespace ValueMail.Infrastructure
         /// </summary>
         /// <returns></returns>
         List<MailHeadModel> GetMailHeaders();
+        List<MailHeadModel> GetMailHeaders(SearchType searchType);
+        List<MailHeadModel> GetMailHeaders(String expression);
         /// <summary>
         ///  获得完整邮件
         /// </summary>

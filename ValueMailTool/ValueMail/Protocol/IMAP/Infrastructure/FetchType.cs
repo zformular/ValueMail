@@ -44,6 +44,10 @@ namespace ValueMail.IMAP.Infrastructure
         /// </summary>
         public static FetchType RFC822 = (FetchType)"RFC822";
         /// <summary>
+        ///  查看邮件的标志
+        /// </summary>
+        public static FetchType FLAGS = (FetchType)"FLAGS";
+        /// <summary>
         ///  自定义Fetch的参数
         /// </summary>
         /// <param name="expression"></param>

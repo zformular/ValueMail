@@ -44,7 +44,12 @@ namespace ValueMail.IMAP
 
         public MailHeadList GetMailHeads(SearchType searchType)
         {
-            return new MailHeadList(imapBase, searchType);
+            return new MailHeadList(imapBase, searchType.ToString());
+        }
+
+        public MailHeadList GetMailHeads(String expression)
+        {
+            return new MailHeadList(imapBase, expression);
         }
 
         public MailModel GetMail(Int32 index)

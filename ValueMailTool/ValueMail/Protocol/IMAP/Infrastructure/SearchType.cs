@@ -7,6 +7,7 @@ namespace ValueMail.IMAP.Infrastructure
 {
     public enum SearchType
     {
+        All,
         Seen,
         New
     }

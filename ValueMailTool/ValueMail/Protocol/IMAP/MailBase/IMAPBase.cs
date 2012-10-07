@@ -90,8 +90,13 @@ namespace ValueMail.IMAP.MailBase
 
         public override List<MailHeadModel> GetMailHeaders(SearchType searchType)
         {
+            return GetMailHeaders(searchType.ToString());
+        }
+
+        public override List<MailHeadModel> GetMailHeaders(String expression)
+        {
             List<MailHeadModel> mailheadList = new List<MailHeadModel>();
-            response = Instruction.SEARCHResponse(searchType);
+            response = Instruction.SEARCHResponse(expression);
             MatchCollection maches = Regex.Matches(response, IMAPHelper.SearchMailPattern);
             foreach (Match item in maches)
             {
@@ -107,6 +112,7 @@ namespace ValueMail.IMAP.MailBase
             String uid = Regex.Match(response, IMAPHelper.UIDPattern).Groups["uid"].ToString();
             response = Instruction.FETCHResponse(index, FetchType.Expression("BODY[HEADER.FIELDS (Date From Subject Content-Type Content-Transfer-Encoding)]"));
             String body = Regex.Match(response, IMAPHelper.FetchMailPattern).Groups["body"].ToString();
+            response = Instruction.STOREReduceFlagResponse(index, StoreFlags.Seen);
             return new MailHeadModel(uid, body);
         }
 

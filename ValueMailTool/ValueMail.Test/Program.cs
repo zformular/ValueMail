@@ -114,10 +114,10 @@ namespace ValueMail.Test
         {
             mailhose host = new mailhose
             {
-                server = "imap.126.com",
+                server = "imap.163.com",
                 Ssl = true,
-                address = "zformular@126.com",
-                password = "zy123456",
+                address = "zformular@163.com",
+                password = "formularz",
                 port = 993
             };
 
@@ -130,31 +130,31 @@ namespace ValueMail.Test
                 Console.WriteLine(mailboxlist);
 
                 client.SelectINBOX();
-                //MailHeadList list = client.GetMailHeads(SearchType.New);
-                //foreach (MailHeadModel mailheader in list)
-                //{
-                //    Console.WriteLine("UID: " + mailheader.UID);
-                //    Console.WriteLine("用户名: " + mailheader.Name);
-                //    Console.WriteLine("地址: " + mailheader.Address);
-                //    Console.WriteLine("主题: " + mailheader.Subject);
-                //    Console.WriteLine("日期: " + mailheader.Date.ToString("yyyy-MM-dd"));
-                //    Console.WriteLine();
-                //}
-                //var mailtest = client.GetMail(1);
-                //Console.WriteLine("UID: " + mailtest.MailHead.UID);
-                //Console.WriteLine("用户名: " + mailtest.MailHead.Name);
-                //Console.WriteLine("地址: " + mailtest.MailHead.Address);
-                //Console.WriteLine("主题: " + mailtest.MailHead.Subject);
-                //Console.WriteLine("日期: " + mailtest.MailHead.Date.ToString("yyyy-MM-dd"));
-                //Console.WriteLine("内容: " + mailtest.Body);
-                //Console.WriteLine();
-                //Console.WriteLine("超文本内容: " + mailtest.BodyHtml);
-                //Console.WriteLine("附件:");
-                //foreach (var item in mailtest.Attachments)
-                //{
-                //    //item.Download(@"E:\mailattachments");
-                //    Console.WriteLine(item.Name);
-                //}
+                MailHeadList list = client.GetMailHeads(SearchType.All);
+                foreach (MailHeadModel mailheader in list)
+                {
+                    Console.WriteLine("UID: " + mailheader.UID);
+                    Console.WriteLine("用户名: " + mailheader.Name);
+                    Console.WriteLine("地址: " + mailheader.Address);
+                    Console.WriteLine("主题: " + mailheader.Subject);
+                    Console.WriteLine("日期: " + mailheader.Date.ToString("yyyy-MM-dd"));
+                    Console.WriteLine();
+                }
+                var mailtest = client.GetMail(1);
+                Console.WriteLine("UID: " + mailtest.MailHead.UID);
+                Console.WriteLine("用户名: " + mailtest.MailHead.Name);
+                Console.WriteLine("地址: " + mailtest.MailHead.Address);
+                Console.WriteLine("主题: " + mailtest.MailHead.Subject);
+                Console.WriteLine("日期: " + mailtest.MailHead.Date.ToString("yyyy-MM-dd"));
+                Console.WriteLine("内容: " + mailtest.Body);
+                Console.WriteLine();
+                Console.WriteLine("超文本内容: " + mailtest.BodyHtml);
+                Console.WriteLine("附件:");
+                foreach (var item in mailtest.Attachments)
+                {
+                    //item.Download(@"E:\mailattachments");
+                    Console.WriteLine(item.Name);
+                }
 
                 client.Disconnect();
                 client.Dispose();
