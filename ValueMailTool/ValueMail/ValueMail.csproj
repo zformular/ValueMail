@@ -33,10 +33,10 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
+    <Reference Include="System.configuration" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
-    <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Data" />
     <Reference Include="System.Xml" />
     <Reference Include="ValueHelper, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
@@ -45,32 +45,30 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Common\Encrypt.cs" />
-    <Compile Include="Common\GlobalVar.cs" />
-    <Compile Include="Common\MailDecompose.cs" />
-    <Compile Include="Common\MailHelper.cs" />
-    <Compile Include="Protocol\IMAP\Infrastructure\FetchType.cs" />
-    <Compile Include="Protocol\IMAP\Infrastructure\IMAPHelper.cs" />
-    <Compile Include="Protocol\IMAP\Infrastructure\SearchType.cs" />
-    <Compile Include="Protocol\IMAP\Infrastructure\StoreFlags.cs" />
-    <Compile Include="Infrastructure\AnalyseType.cs" />
-    <Compile Include="Infrastructure\ContentMediaType.cs" />
-    <Compile Include="Infrastructure\IMailBase.cs" />
-    <Compile Include="Infrastructure\ProviderType.cs" />
-    <Compile Include="Protocol\IMAP\Instruction\IMAPInstruction.cs" />
-    <Compile Include="Protocol\POP3\Instruction\POP3Instruction.cs" />
-    <Compile Include="Protocol\IMAP\MailBase\IMAPBase.cs" />
-    <Compile Include="MailBase\MailBase.cs" />
-    <Compile Include="Protocol\IMAP\IMAPClient.cs" />
-    <Compile Include="Protocol\POP3\POP3Client.cs" />
-    <Compile Include="Protocol\POP3\MailBase\POP3Base.cs" />
-    <Compile Include="Model\Attachment.cs" />
-    <Compile Include="Model\MailHeadList.cs" />
-    <Compile Include="Model\MailHeadModel.cs" />
-    <Compile Include="Model\MailList.cs" />
-    <Compile Include="Model\MailModel.cs" />
-    <Compile Include="Model\PartialMailModel.cs" />
+    <Compile Include="Receive\Infrastructure\ReceiveHelper.cs" />
+    <Compile Include="Receive\Protocol\IMAP\Infrastructure\FetchType.cs" />
+    <Compile Include="Receive\Protocol\IMAP\Infrastructure\IMAPHelper.cs" />
+    <Compile Include="Receive\Protocol\IMAP\Infrastructure\SearchType.cs" />
+    <Compile Include="Receive\Protocol\IMAP\Infrastructure\StoreFlags.cs" />
+    <Compile Include="Receive\Infrastructure\IMailBase.cs" />
+    <Compile Include="Receive\Infrastructure\ProviderType.cs" />
+    <Compile Include="Receive\Protocol\IMAP\Instruction\IMAPInstruction.cs" />
+    <Compile Include="Receive\Protocol\POP3\Instruction\POP3Instruction.cs" />
+    <Compile Include="Receive\Protocol\IMAP\MailBase\IMAPBase.cs" />
+    <Compile Include="Receive\MailBase\MailBase.cs" />
+    <Compile Include="Receive\Protocol\IMAP\IMAPClient.cs" />
+    <Compile Include="Receive\Protocol\POP3\POP3Client.cs" />
+    <Compile Include="Receive\Protocol\POP3\MailBase\POP3Base.cs" />
+    <Compile Include="Receive\Model\MailHeadList.cs" />
+    <Compile Include="Receive\Model\MailHeadModel.cs" />
+    <Compile Include="Receive\Model\MailList.cs" />
+    <Compile Include="Receive\Model\MailModel.cs" />
+    <Compile Include="Receive\Model\PartialMailModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Send\Infrastructure\HostModel.cs" />
+    <Compile Include="Send\Infrastructure\SendModel.cs" />
+    <Compile Include="Send\Infrastructure\SendHelper.cs" />
+    <Compile Include="Send\Protocol\SMTP\SmtpClient.cs" />
   </ItemGroup>
   <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
